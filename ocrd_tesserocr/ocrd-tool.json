@@ -48,13 +48,18 @@
         "textequiv_level": {
           "type": "string",
           "enum": ["region", "line", "word", "glyph"],
-          "default": "line",
-          "description": "PAGE XML hierarchy level to add the TextEquiv results to (requires existing layout annotation up to one level above that)"
+          "default": "word",
+          "description": "Lowest PAGE XML hierarchy level to add the TextEquiv results to; when below `region`, implicitly adds segmentation below the line level, but requires existing line segmentation"
         },
         "overwrite_words": {
           "type": "boolean",
           "default": false,
-          "description": "remove existing layout and text annotation below the TextLine level (regardless of textequiv_level)"
+          "description": "Remove existing layout and text annotation below the TextLine level (regardless of textequiv_level)."
+        },
+        "raw_lines": {
+          "type": "boolean",
+          "default": true,
+          "description": "Do not attempt additional segmentation (baseline+xheight+ascenders/descenders prediction) when using line images (i.e. when textequiv_level<region). Disable when line segments/images likely contain components of more than 1 line."
         },
         "model": {
           "type": "string",
