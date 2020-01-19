@@ -75,7 +75,7 @@ class TesserocrSegmentRegion(Processor):
                 # this should yield additional blocks within the table blocks
                 # from the page iterator, but does not in fact (yet?):
                 # (and it can run into assertion errors when the table structure
-                #  does not meet certain homogenity expectations)
+                #  does not meet certain homogeneity expectations)
                 #tessapi.SetVariable("textord_tablefind_recognize_tables", "1")
             else:
                 # disable table detection here, so tables will be
@@ -233,7 +233,7 @@ class TesserocrSegmentRegion(Processor):
                               # for it (better set `find_tables` False):
                               # PT.TABLE,
                               # will also get a 90° @orientation
-                              # (but that can be overriden by deskewing):
+                              # (but that can be overridden by deskewing):
                               PT.VERTICAL_TEXT]:
                 region = TextRegionType(id=ID, Coords=coords,
                                         type=TextTypeSimpleType.PARAGRAPH)
